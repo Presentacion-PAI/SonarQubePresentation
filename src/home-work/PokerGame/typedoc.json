@@ -1,0 +1,13 @@
+{
+  "entryPoints": [
+    "./model/poker-game.ts",
+    "./model/poker-hand.ts",
+    "./model/card.ts",
+    "./model/deck.ts",
+    "./model/hand.ts",
+    "./view/PokerView.ts",
+    "./controller/PokerController.ts"
+  ],
+  "out": "./docs",
+  "tsconfig": "./tsconfig.json"
+}

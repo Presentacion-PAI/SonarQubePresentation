@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/home-work/PokerGame/**/*"],
+  "exclude": ["node_modules"]
+}

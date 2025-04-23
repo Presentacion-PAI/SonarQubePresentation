@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagrama UML - Póker Game</title>
+
+  <link rel="stylesheet" href="styles/ull-bulma.css" />
+  <link rel="stylesheet" href="styles/custom.css" />
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-3 has-text-primary has-text-centered mb-5">Diagrama UML del Proyecto</h1>
+
+      <div class="box">
+        <pre class="mermaid has-background-light has-text-centered">
+classDiagram
+  class Card {
+    +Suit suit
+    +Rank rank
+    +getSuit()
+    +getRank()
+    +getImage()
+    +toString()
+  }
+
+  class Deck {
+    -cards: Card[]
+    +shuffle()
+    +popCard()
+    +addCard()
+    +sort()
+    +moveCardsToHand()
+    +dealHands()
+  }
+
+  class Hand {
+    -cards: Card[]
+    +addCard()
+    +clear()
+    +getCards()
+    +size()
+  }
+
+  class PokerHand {
+    +classify()
+    +compareWith()
+    +hasPair()
+    +hasThreeOfAKind()
+    +hasFlush()
+    +hasFullHouse()
+    ...
+  }
+
+  class PokerGame {
+    -deck: Deck
+    -hand1: PokerHand
+    -hand2: PokerHand
+    +deal()
+    +dealHand1()
+    +dealHand2()
+    +getWinner()
+    +getHand1()
+    +getHand2()
+  }
+
+  class PokerView {
+    +renderHand()
+    +renderHands()
+    +showWinner()
+    +clear()
+  }
+
+  class GameController {
+    +handleDeal()
+    +handleDealHand1()
+    +handleDealHand2()
+  }
+
+  Card --> Deck
+  Deck --> Hand
+  Hand --> Deck
+  Hand <|-- PokerHand
+  PokerGame --> PokerHand
+  PokerGame --> Deck
+  PokerView --> PokerHand
+  GameController --> PokerGame
+  GameController --> PokerView
+        </pre>
+      </div>
+
+      <div class="has-text-centered mt-5">
+        <a href="index.html" class="button is-primary is-fullwidth is-medium">
+          <span class="icon"><i class="fas fa-home"></i></span>
+          <span>Volver al inicio</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>

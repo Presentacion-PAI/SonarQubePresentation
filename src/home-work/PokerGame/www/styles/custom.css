@@ -1,0 +1,21 @@
+.card-image {
+  width: 120px;
+  height: auto;
+  margin: 0.25rem;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.box {
+  padding: 0.75rem;
+}
+
+.notification {
+  padding: 1.10rem;
+}
+
+.card-image:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}

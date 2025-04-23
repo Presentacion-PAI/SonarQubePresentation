@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Póker Game - ULL</title>
+
+  <link rel="stylesheet" href="styles/ull-bulma.css" />
+  <link rel="stylesheet" href="styles/custom.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script defer src="bundle.js"></script>
+</head>
+<body>
+  <section class="section ">
+    <div class="container has-text-centered">
+
+      <h1 class="title is-2 has-text-primary">♠ Póker Game ♣</h1>
+      <p class="subtitle is-5 mb-4">Universidad de La Laguna · PAI</p>
+
+      <div class="field is-grouped is-grouped-centered mb-5">
+        <label class="label mr-2" for="cardCount">Cartas por mano:</label>
+        <div class="control">
+          <input id="cardCount" class="input is-small" type="number" min="5" value="5" />
+        </div>
+      </div>
+
+      <div class="box has-background-light mb-5">
+        <p class="subtitle is-4 has-text-primary mb-5">Jugador 1</p>
+        <div id="hand1" class="columns is-centered is-multiline is-mobile"></div>
+        <p id="hand1-rank" class="is-size-5 has-text-weight-bold mt-2"></p>
+      </div>
+
+      <div class="box has-background-light mb-5">
+        <p class="subtitle is-4 has-text-primary mb-5">Jugador 2</p>
+        <div id="hand2" class="columns is-centered is-multiline is-mobile"></div>
+        <p id="hand2-rank" class="is-size-5 has-text-weight-bold mt-2"></p>
+      </div>
+
+      <div id="result" class="notification is-info is-light is-size-5 has-text-centered mb-4"></div>
+
+      <div class="buttons is-centered mt-4">
+        <button id="dealHand1Btn" class="button is-white has-text-primary is-medium">Repartir mano 1</button>
+        <button id="dealHand2Btn" class="button is-white has-text-primary is-medium">Repartir mano 2</button>
+        <button id="dealButton" class="button is-primary is-medium">Repartir ambas</button>
+      </div>
+
+      <a href="index.html" class="button is-primary is-fullwidth is-medium mb-3">
+        <span class="icon">
+          <i class="fas fa-home"></i>
+        </span>
+        <span>Volver al inicio</span>
+      </a>
+
+    </div>
+  </section>
+</body>
+</html>

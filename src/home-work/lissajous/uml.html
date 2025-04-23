@@ -1,0 +1,92 @@
+<!--  
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+  @autor Daniel Carbonell González de Chaves
+  @since 06/04/2025
+  @desc Página UML del proyecto de representacion de lissajous de la práctica 10 de PAI
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Lissajous: UML</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+  </head>
+  <body>
+    <h1>PAI: Lissajous</h1>
+    <p class="author">Daniel Carbonell González de Chaves</p>
+    <div class="button-container-home">
+      <a href="index.html">
+        <button>Home</button>
+      </a>
+    </div>
+    <h2>UML Diagram</h2>
+    <pre class="mermaid">
+      classDiagram
+        class LissajousModel {
+            - freqA: number
+            - freqB: number
+            - phi: number
+            - amplitudeX: number
+            - amplitudeY: number
+            + updateParameter(index: number, value: number): void
+            + getParameters():﹛ freqA: number, freqB: number, phi: number, amplitudeX: number, amplitudeY: number ﹜
+            + calculatePoints(numPoints: number, canvasWidth: number, canvasHeight: number):﹛ x: number, y: number ﹜[]
+        }
+        class LissajousView {
+          - canvas: HTMLCanvasElement
+          - context: CanvasRenderingContext2D
+          - grid: GridDrawer
+          - lissajous: LissajousDrawer
+          - initializeSliders(): HTMLInputElement[]
+          - initializeValueDisplays(): HTMLSpanElement[]
+          + render(parameters:﹛ freqA: number, freqB: number, phi: number, amplitudeX: number, amplitudeY: number ﹜): void
+          + getSlider(index: number): HTMLInputElement
+          + getValueDisplay(index: number): HTMLSpanElement
+          + update(parameters:﹛ freqA: number; freqB: number; phi: number; amplitudeX: number; amplitudeY: number ﹜): void
+        }
+
+        class LissajousController {
+          - model: LissajousModel
+          - view: LissajousView
+          - initializeEventListeners(): void
+          - handleEvent(event: Event): void
+        }
+
+        class GridDrawer {
+          - width: number
+          - height: number
+          - cellSize: number
+          - lineDrawer: LineDrawer
+          + draw(): void
+        }
+
+        class LineDrawer {
+          - context: CanvasRenderingContext2D
+          + drawLine(startX: number, startY: number, endX: number, endY: number, color: string, lineWidth: number): void
+        }
+
+        class LissajousDrawer {
+          - width: number
+          - height: number
+          - lineDrawer: LineDrawer
+          + draw(freqA: number, freqB: number, phi: number, amplitudeX: number, amplitudeY: number): void
+        }
+
+        LissajousController o-- LissajousModel
+        LissajousController o-- LissajousView
+        LissajousView *-- GridDrawer
+        LissajousView *-- LissajousDrawer
+        GridDrawer *-- LineDrawer
+        LissajousDrawer *-- LineDrawer
+    </pre>
+  </body>
+</html>

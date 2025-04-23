@@ -1,0 +1,210 @@
+* {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+body {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
+canvas {
+  background: rgb(238, 237, 237);
+  padding: 0;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  margin-right: 20px; /* Añadir margen derecho al canvas */
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  flex: 3;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 1rem;
+}
+
+.button-container-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+button {
+  font-weight: 650;
+  background-color: #4c93af;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #39808f;
+}
+
+.button-container a {
+  margin: 0 10px;
+}
+
+pre.mermaid {
+  width: 100%;
+  max-width: 1200px; 
+  font-size: 1.2rem;
+  overflow: auto;
+}
+
+#function-input {
+  height: 35px;
+  padding: 4px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.red {
+  border: 2px solid rgb(192, 63, 63);
+  color: rgb(192, 63, 63);
+  background-color: transparent;
+}
+
+.green {
+  border: 2px solid rgb(70, 177, 70);
+  color: rgb(70, 177, 70);
+  background-color: transparent;
+}
+
+.green:hover {
+  background-color: rgb(70, 177, 70);
+  color: white;
+}
+
+.red:hover {
+  background-color: rgb(192, 63, 63);
+  color: white;
+}
+
+.button-container button {
+  font-weight: 500;
+}
+
+.centered-box {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 600px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-container {
+  display: flex;
+  align-items: flex-start;
+  height: 800px;
+}
+
+.slider-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 800;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}
+
+slider-container label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+slider-container input[type="range"] {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+slider-container span {
+  font-size: 14px;
+  color: #333;
+}
+
+.slider-group {
+  display: grid;
+  grid-template-columns: auto auto 1fr; /* Etiqueta, valor y unidad en una fila */
+  grid-template-rows: auto auto; /* Slider en una nueva fila */
+  gap: 10px; /* Espacio entre los elementos */
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.slider-group label {
+  grid-column: 1 / 2; /* Colocar la etiqueta en la primera columna */
+}
+
+.slider-group .value-box {
+  grid-column: 2 / 3; /* Colocar el cuadro del valor en la segunda columna */
+}
+
+.slider-group .unit {
+  grid-column: 3 / 4; /* Colocar la unidad en la tercera columna */
+}
+
+.slider-group input[type="range"] {
+  grid-column: 1 / 4; /* Hacer que el slider ocupe toda la fila */
+  grid-row: 2 / 3; /* Colocar el slider en la segunda fila */
+  width: 100%; /* Asegurar que el slider ocupe todo el ancho disponible */
+}
+
+.value-box {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  margin-right: 5px; /* Espacio entre el cuadro y la unidad */
+}
+
+.unit {
+  font-size: 14px;
+  color: #333;
+  margin-right: 10px; /* Espacio entre la unidad y el slider */
+}
+
+.author {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  margin-top: -22px;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,62 @@
+<!--  
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+  @autor Daniel Carbonell González de Chaves
+  @since 06/04/2025
+  @desc Página Program del proyecto de representacion de lissajous de la práctica 10 de PAI
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Lissajous: Program</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="lissajous-client.js"></script>
+  </head>
+  <body>
+    <h1>PAI: Lissajous</h1>
+    <p class="author">Daniel Carbonell González de Chaves</p>
+    <div class="button-container-home">
+      <a href="index.html">
+        <button>Home</button>
+      </a>
+    </div>
+    <h2>Program</h2>
+    <div class="main-container">
+      <canvas id="lissajous" width="1650" height="800"></canvas>
+      <div class="slider-container">
+        <div class="slider-group">
+          <label for="slider1">a</label>
+          <span id="value1" class="value-box">1</span>
+          <input type="range" id="slider1" min="1" max="20" value="1">
+        </div>
+        <div class="slider-group">
+          <label for="slider2">b</label>
+          <span id="value2" class="value-box">1</span>
+          <input type="range" id="slider2" min="1" max="20" value="1">
+        </div>
+        <div class="slider-group">
+          <label for="slider3">Φ</label>
+          <span id="value3" class="value-box">1.35</span>
+          <span class="unit">π</span>
+          <input type="range" id="slider3" min="0.0" max="2.0" value="1.35" step="0.01">
+        </div>
+        <div class="slider-group">
+          <label for="slider4">A</label>
+          <span id="value4" class="value-box">380</span>
+          <span class="unit">px</span>
+          <input type="range" id="slider4" min="1" max="820" value="380">
+        </div>
+        <div class="slider-group">
+          <label for="slider5">B</label>
+          <span id="value5" class="value-box">300</span>
+          <span class="unit">px</span>
+          <input type="range" id="slider5" min="1" max="400" value="300">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

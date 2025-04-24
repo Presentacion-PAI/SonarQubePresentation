@@ -1,0 +1,7 @@
+organization=presentacion-pai
+projectKey=presentacion-pai_poker-lyli
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.62441
+dashboardUrl=https://sonarcloud.io/dashboard?id=presentacion-pai_poker-lyli
+ceTaskId=AZZnBeg--Ty6QoQc9UTO
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZZnBeg--Ty6QoQc9UTO

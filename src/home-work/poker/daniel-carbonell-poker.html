@@ -1,0 +1,58 @@
+<!--  
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+  @autor Daniel Carbonell González de Chaves
+  @since 16/04/2025
+  @desc Página Program del proyecto de Poker de la práctica 11 de PAI
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Poker: Program</title>
+    <link rel="stylesheet" href="my-ULL-bulma-project.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="module" src="dist/poker-client.js"></script>
+  </head>
+  <body>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Poker Game</h1>
+          <h2 class="subtitle">Daniel Carbonell González de Chaves</h2>
+        </div>
+      </div>
+    </section>
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="daniel-carbonell-poker.html">
+            <img src="../../../img/honors_spade-14.png" alt="Poker Game Logo" style="max-height: 50px;">
+        </a>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="index.html">Home</a>
+          <a class="navbar-item" href="daniel-carbonell-poker.html">Program</a>
+          <a class="navbar-item" href="uml.html">UML</a>
+          <a class="navbar-item" href="../../../docs/index.html">Documentation</a>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="container">
+        <div class="is-flex is-justify-content-center is-align-items-center">
+          <canvas id="pokerCanvas" width="1800" height="800" class="box"></canvas>
+        </div>
+        <div class="buttons is-centered">
+          <button id="deal1" class="button is-link">Deal Hand 1</button>
+          <button id="deal2" class="button is-primary">Deal Hand 2</button>
+        </div>
+        <div id="result" class="notification is-info is-light has-text-centered"></div>
+      </div>
+    </section>
+  </body>
+</html>

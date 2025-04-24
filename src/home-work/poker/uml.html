@@ -1,0 +1,162 @@
+<!--  
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+  @autor Daniel Carbonell González de Chaves
+  @since 16/04/2025
+  @desc Página UML del proyecto de Poker de la práctica 11 de PAI
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Poker: Home</title>
+    <link rel="stylesheet" href="my-ULL-bulma-project.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+      .mermaid {
+        font-size: 12px;
+        max-width: 50%;
+        max-height: 100%;
+        overflow: auto;
+        background-color: rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Poker Game</h1>
+          <h2 class="subtitle">Daniel Carbonell González de Chaves</h2>
+        </div>
+      </div>
+    </section>
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="daniel-carbonell-poker.html">
+          <img src="../../../img/honors_spade-14.png" alt="Poker Game Logo" style="max-height: 50px;">
+        </a>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="index.html">Home</a>
+          <a class="navbar-item" href="daniel-carbonell-poker.html">Program</a>
+          <a class="navbar-item" href="uml.html">UML</a>
+          <a class="navbar-item" href="../../../docs/index.html">Documentation</a>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="container">
+        <pre class="mermaid">
+          classDiagram
+            class PokerController {
+              - view: PokerView
+              - model: PokerModel
+              + initializeEvents(): void
+              + handleEvent(event: Event): void
+              + showHand(index: number): Promise
+              + compareHands(): void
+              + shuffleAndDeal(): void
+            }
+            class PokerModel {
+              - deck: Deck
+              - hands: PokerHand[]
+              + getHands(): PokerHand[]
+              + shuffleAndDeal(): void
+              + compareHands(): string
+            }
+            class PokerView {
+              - context: CanvasRenderingContext2D
+              - cardWidth: number
+              - cardHeight: number
+              - backHand: PokerHand
+              - canvas: HTMLCanvasElement
+              + clear(): void
+              + drawHand(hand: Hand, yCoord: number): Promise
+              + drawResult(result: string): void
+            }
+            class PokerHand {
+              - value: string
+              + classify(): string
+              + compareHands(otherHand: PokerHand): string
+              + hasPair(): boolean
+              + hasTwoPair(): boolean
+              + hasThreeOfaKind(): boolean
+              + hasFourOfaKind(): boolean
+              + hasFullHouse(): boolean
+              + hasFlush(): boolean
+              + hasStraight(): boolean
+              + hasStraightFlush(): boolean
+            }
+            class Hand {
+              - label: string
+              - cards: Card[]
+              + getCards(): Card[]
+              + addCard(card: Card): void
+              + popCard(): Card | undefined
+              + toString(): string
+            }
+            class Deck {
+              - cards: Card[]
+              + popCard(): Card | undefined
+              + addCard(card: Card): void
+              + shuffle(): void
+              + sort(): void
+              + print(): void
+              + dealHands(numHands: number, cardsPerHand: number): Hand[]
+            }
+            class Card {
+              - suit: Suit
+              - rank: Rank
+              - image: string
+              + setImage(image: string): void
+              + getSuit(): Suit
+              + getRank(): Rank
+              + getImage(): string
+              + toString(): string
+              + compareTo(other: Card): number
+            }
+            class Suit {
+              + CLUBS
+              + DIAMONDS
+              + HEARTS
+              + SPADES
+            }
+            class Rank {
+              + TWO
+              + THREE
+              + FOUR
+              + FIVE
+              + SIX
+              + SEVEN
+              + EIGHT
+              + NINE
+              + TEN
+              + JACK
+              + QUEEN
+              + KING
+              + ACE
+            }
+            PokerController o-- PokerView
+            PokerController o-- PokerModel
+            PokerModel o-- Deck
+            PokerModel o-- PokerHand
+            PokerHand --|> Hand
+            Hand o-- Card
+            Deck o-- Card
+            Card o-- Suit
+            Card o-- Rank
+        </pre>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+name: SonarCloud - Poker
+
+on:
+  push:
+    paths:
+      - 'src/home-work/PokerGame/**'  # Solo se activa si hay cambios en esa carpeta
+
+jobs:
+  analyze:
+    name: SonarCloud Scan - Poker
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          cd src/home-work/PokerGame
+          npm ci
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        with:
+          projectBaseDir: src/home-work/PokerGame
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PROJECT_KEY: presentación-pai_poker-game
+          SONAR_ORGANIZATION: presentacion-pai

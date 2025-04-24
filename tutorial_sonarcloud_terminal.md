@@ -1,31 +1,10 @@
-# 🚀 Tutorial: Análisis de código con SonarCloud desde la terminal
+# 🚀 Tutorial: Instalacion y Análisis de código con SonarQube Cloud desde la terminal ubuntu
 
-Este tutorial te guiará paso a paso para analizar un proyecto con **SonarCloud** usando la terminal y el escáner SonarScanner.
-
----
-
-## 🧩 Requisitos previos
-
-- Tener una cuenta en GitHub
-- Tener un repositorio (puede ser de prueba)
-- Tener instalado Java (JDK 17)
+Este tutorial te guiará paso a paso para instalar y analizar un proyecto con **SonarQube Cloud** usando la terminal y el escáner SonarScanner.
 
 ---
 
-## 🛠️ Paso 1: Crear cuenta y organización en SonarCloud
-
-1. Entra en [https://sonarcloud.io](https://sonarcloud.io) e inicia sesión con tu cuenta de GitHub.
-2. Crea una **organización personal** (usa tu usuario de GitHub).
-3. Importa un repositorio para analizar.
-4. Copia el `projectKey` y `organization` del proyecto que aparece en la interfaz.
-5. Genera un **token de acceso**:
-   - Ve a `My Account > Security`
-   - Introduce un nombre y haz clic en `Generate`
-   - Copia el token (solo se muestra una vez).
-
----
-
-## 📦 Paso 2: Instalar SonarScanner
+## 📦 Paso 1: Instalar SonarScanner
 
 ### En Linux (Ubuntu/WSL):
 
@@ -46,15 +25,15 @@ sonar-scanner -v
 
 ---
 
-## 📄 Paso 3: Crear el archivo `sonar-project.properties`
+## 📄 Paso 2: Crear el archivo `sonar-project.properties`
 
 Ubícate en la raíz del proyecto y crea el archivo:
 
 ```bash
-nano sonar-project.properties
+vim sonar-project.properties
 ```
 
-Ejemplo de contenido adaptado para un proyecto TypeScript:
+Ejemplo de contenido adaptado para un proyecto TypeScript (IMPORTANTE: sustituir valores de las variables por los de tu proyecto):
 
 ```ini
 sonar.projectKey=mi-organizacion_mi-proyecto
@@ -79,24 +58,14 @@ Desde la raíz del proyecto, ejecuta:
 sonar-scanner
 ```
 
-Al finalizar, aparecerá una URL con el informe del análisis.
-
----
-
-## 🔍 Paso 5: Interpretar los resultados
-
-Ve a la URL proporcionada por el escáner. Verás:
-
-- **Quality Gate**: estado general del proyecto.
-- **Bugs / Vulnerabilities / Code Smells**: errores, problemas de seguridad y malas prácticas.
-- **Coverage / Duplications**: cobertura de tests y código duplicado.
+Al finalizar, aparecerá el nuevo proyecto en SonarQube Cloud.
 
 ---
 
 ## ✅ Consejos adicionales
 
 - Usa `sonar.exclusions` para evitar analizar carpetas irrelevantes (HTML, imágenes, documentación...).
-- Puedes añadir SonarCloud a GitHub Actions más adelante para automatizar el análisis.
+- Añadir SonarCloud a GitHub Actions para automatizar el análisis.
 
 ---
 

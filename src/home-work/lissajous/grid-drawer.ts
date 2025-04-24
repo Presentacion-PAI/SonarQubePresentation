@@ -18,10 +18,10 @@
 import { LineDrawer } from './line-drawer.js';
 
 export class GridDrawer {
-  private width: number;
-  private height: number;
-  private cellSize: number;
-  private lineDrawer: LineDrawer;
+  private readonly width: number;
+  private readonly height: number;
+  private readonly cellSize: number;
+  private readonly lineDrawer: LineDrawer;
 
   /**
    * Constructor de la clase `GridDrawer`.

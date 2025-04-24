@@ -1,7 +1,7 @@
 organization=presentacion-pai
 projectKey=presentacion-pai_lissajous
 serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.62441
+serverVersion=8.0.0.62516
 dashboardUrl=https://sonarcloud.io/dashboard?id=presentacion-pai_lissajous
-ceTaskId=AZZk5TZXT0OQU46eN5gZ
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZZk5TZXT0OQU46eN5gZ
+ceTaskId=AZZo0zma2xzBoPIlehh4
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZZo0zma2xzBoPIlehh4

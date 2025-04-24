@@ -15,7 +15,7 @@
  * Clase `LineDrawer` que se encarga de dibujar líneas en un contexto de lienzo HTML5.
  */
 export class LineDrawer {
-  private context: CanvasRenderingContext2D;
+  private readonly context: CanvasRenderingContext2D;
 
   /**
    * Constructor de la clase `LineDrawer`.

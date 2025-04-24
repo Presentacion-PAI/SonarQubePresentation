@@ -1,0 +1,6 @@
+{
+  "sonarlint.connectedMode.project": {
+    "connectionId": "presentacion-pai",
+    "projectKey": "presentacion-pai_poker-game"
+  }
+}
